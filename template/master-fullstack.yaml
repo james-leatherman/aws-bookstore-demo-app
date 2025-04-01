@@ -51,7 +51,9 @@ Mappings:
       PythonLambdaLayer: functions/PythonLambdaLayer.zip
       DeleteBucketsCode: functions/DeleteBuckets.zip
       SeederFunctionCode: functions/aws-serverless-codecommit-seeder.zip
+
 Resources:
+
 # ---------- VPC - SUBNET - SECURITY GROUPS  ---------
 
   bookstoreVPC:
