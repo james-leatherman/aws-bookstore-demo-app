@@ -1,10 +1,17 @@
 {
   "Parameters": {
     "ProjectName": "mybookstore",
-    "DeploymentConfigPath": "deployment-config.json"
+    "DeploymentConfigPath": "deployment-config.json",
+    "TemplatePath": "template/master-fullstack.yaml"
   },
   "Tags": {
     "Project": "Bookstore Demo",
     "Environment": "Development"
+  },
+  "DeploymentParameters": {
+    "TemplateURL": "template/master-fullstack.yaml",
+    "StackName": "bookstore-demo-stack",
+    "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+    "Region": "us-east-1"
   }
 } 
