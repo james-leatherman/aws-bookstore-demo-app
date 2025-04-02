@@ -1,0 +1,10 @@
+{
+  "Parameters": {
+    "ProjectName": "mybookstore",
+    "DeploymentConfigPath": "deployment-config.json"
+  },
+  "Tags": {
+    "Project": "Bookstore Demo",
+    "Environment": "Development"
+  }
+} 

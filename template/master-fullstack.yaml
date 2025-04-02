@@ -6,21 +6,26 @@ Parameters:
     Default: mybookstore
     AllowedPattern: "^[a-z]{1,12}"
     ConstraintDescription: The ProjectName can be up to 12 characters, lowercase letters (a-z) only.
+  DeploymentConfigPath:
+    Description: Path to the deployment configuration file
+    Type: String
+    Default: deployment-config.json
+    ConstraintDescription: Path to the deployment configuration file
 Conditions:
   IADRegion: !Equals [!Ref "AWS::Region", "us-east-1"]
 Mappings:
   S3Buckets:
     us-east-1:
-      Bucket: aws-bookstore-demo-app-us-east-1
+      Bucket: !Sub 'aws-bookstore-demo-app-${AWS::AccountId}-us-east-1'
       NeptuneDataBucket: bookstore-neptune
     us-west-2:
-      Bucket: aws-bookstore-demo-app-us-west-2
+      Bucket: !Sub 'aws-bookstore-demo-app-${AWS::AccountId}-us-west-2'
       NeptuneDataBucket: bookstore-neptune-us-west-2
     eu-central-1:
-      Bucket: aws-bookstore-demo-app-eu-central-1
+      Bucket: !Sub 'aws-bookstore-demo-app-${AWS::AccountId}-eu-central-1'
       NeptuneDataBucket: bookstore-neptune-eu-central-1
     eu-west-1:
-      Bucket: aws-bookstore-demo-app-eu-west-1
+      Bucket: !Sub 'aws-bookstore-demo-app-${AWS::AccountId}-eu-west-1'
       NeptuneDataBucket: bookstore-neptune-eu-west-1
   Constants:
     AppKeys:
